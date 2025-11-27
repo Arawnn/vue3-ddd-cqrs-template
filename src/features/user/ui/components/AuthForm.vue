@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import Input from '@/shared/ui/components/Input.vue'
 import Button from '@/shared/ui/components/Button.vue'
-import { Email } from '@/features/auth/domain/Email'
-import { Password } from '@/features/auth/domain/Password'
+import { Email } from '@/features/user/domain/Email'
+import { Password } from '@/features/user/domain/Password'
 
 interface Props {
   mode: 'signin' | 'signup'

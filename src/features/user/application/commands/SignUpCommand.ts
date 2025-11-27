@@ -1,5 +1,5 @@
 import { UseCase } from '@/core/application/UseCase'
-import type { IEventBus } from '@/core/infrastructure/EventBus'
+import type { IEventBus } from '@/core/domain/EventBus'
 import type { AuthRepository, SignUpInput } from '../../domain/AuthRepository'
 import { User } from '../../domain/User'
 import { UserCreatedEvent } from '../../domain/events/UserCreatedEvent'

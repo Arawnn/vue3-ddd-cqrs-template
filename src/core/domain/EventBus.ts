@@ -1,5 +1,5 @@
-import type { DomainEvent } from '../domain/DomainEvent'
-import type { ILogger } from '../domain/Logger'
+import type { DomainEvent } from './DomainEvent'
+import type { ILogger } from './Logger'
 
 type EventHandler<T extends DomainEvent = DomainEvent> = (event: T) => void | Promise<void>
 

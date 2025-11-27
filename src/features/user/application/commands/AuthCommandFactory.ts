@@ -2,7 +2,7 @@ import { SignUpCommand } from './SignUpCommand'
 import { SignInCommand } from './SignInCommand'
 import { SignOutCommand } from './SignOutCommand'
 import type { AuthRepository } from '../../domain/AuthRepository'
-import type { IEventBus } from '@/core/infrastructure/EventBus'
+import type { IEventBus } from '@/core/domain/EventBus'
 
 export interface IAuthCommandFactory {
   createSignUpCommand(): SignUpCommand

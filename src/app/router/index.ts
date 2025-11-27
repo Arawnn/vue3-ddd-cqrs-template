@@ -11,13 +11,13 @@ const router = createRouter({
     {
       path: '/signin',
       name: 'signin',
-      component: () => import('@/features/auth/ui/pages/SignInPage.vue'),
+      component: () => import('@/features/user/ui/pages/SignInPage.vue'),
       meta: { requiresAuth: false },
     },
     {
       path: '/signup',
       name: 'signup',
-      component: () => import('@/features/auth/ui/pages/SignUpPage.vue'),
+      component: () => import('@/features/user/ui/pages/SignUpPage.vue'),
       meta: { requiresAuth: false },
     },
     {

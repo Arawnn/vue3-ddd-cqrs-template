@@ -12,10 +12,10 @@ import {
   EventBusKey,
   LoggerKey,
 } from '@/app/providers/tokens'
-import { SupabaseAuthRepository } from '@/features/auth/infrastructure/SupabaseAuthRepository'
-import { EventBus } from '@/core/infrastructure/EventBus'
-import { AuthCommandFactory } from './features/auth/application/commands/AuthCommandFactory'
-import { AuthQueryFactory } from './features/auth/application/queries/AuthQueryFactory'
+import { SupabaseAuthRepository } from '@/features/user/infrastructure/SupabaseAuthRepository'
+import { EventBus } from '@/core/domain/EventBus'
+import { AuthCommandFactory } from './features/user/application/commands/AuthCommandFactory'
+import { AuthQueryFactory } from './features/user/application/queries/AuthQueryFactory'
 import { ConsoleLogger, LogLevel } from './core/infrastructure/ConsoleLogger'
 
 const app = createApp(App)

@@ -2,7 +2,7 @@
 import { computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import MainLayout from '@/app/layout/MainLayout.vue'
-import { useAuthStore } from '@/features/auth/store/useAuthStore'
+import { useAuthStore } from '@/features/user/store/useAuthStore'
 
 const route = useRoute()
 const router = useRouter()
