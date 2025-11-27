@@ -36,7 +36,7 @@ export class SignInCommandHandler extends ICommandHandler<SignInCommand, User> {
     }
     user.signIn()
     await this.userRepository.save(user)
-    this.eventBus.publishAndClear(user)
+    this.eventBus.publish([...user.getDomainEvents()])
     return user
   }
 }

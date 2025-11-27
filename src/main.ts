@@ -14,7 +14,7 @@ import {
   LoggerKey,
 } from '@/app/providers/tokens'
 import { SupabaseAuthService } from '@/features/user/infrastructure/SupabaseAuthService'
-import { EventBus } from '@/core/domain/EventBus'
+import { EventBus } from '@/core/infrastructure/EventBus'
 import { AuthCommandFactory } from '@/features/user/application/commands/AuthCommandFactory'
 import { AuthQueryFactory } from '@/features/user/application/queries/AuthQueryFactory'
 import { ConsoleLogger, LogLevel } from '@/core/infrastructure/ConsoleLogger'

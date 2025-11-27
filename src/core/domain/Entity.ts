@@ -1,7 +1,6 @@
 import type { DomainEvent } from './DomainEvent'
 import type { ValueObject } from './ValueObject'
-import type { HasDomainEvents } from './EventBus'
-export abstract class Entity<Id extends ValueObject<unknown>> implements HasDomainEvents {
+export abstract class Entity<Id extends ValueObject<unknown>> {
   private _domainEvents: DomainEvent[] = []
 
   protected constructor(private readonly _id: Id) {}
@@ -27,7 +26,9 @@ export abstract class Entity<Id extends ValueObject<unknown>> implements HasDoma
   }
 
   public getDomainEvents(): readonly DomainEvent[] {
-    return [...this._domainEvents]
+    const events = [...this._domainEvents]
+    this.clearDomainEvents()
+    return events
   }
 
   public clearDomainEvents(): void {

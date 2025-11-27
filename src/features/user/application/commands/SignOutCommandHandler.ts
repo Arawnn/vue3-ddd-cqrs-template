@@ -21,6 +21,6 @@ export class SignOutCommandHandler extends ICommandHandler<SignOutCommand, void>
 
     await this.authService.signOut()
     user.signOut()
-    this.eventBus.publishAndClear(user)
+    this.eventBus.publish([...user.getDomainEvents()])
   }
 }

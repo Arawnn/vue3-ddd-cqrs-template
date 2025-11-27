@@ -28,14 +28,14 @@ export class SignUpCommandHandler extends ICommandHandler<SignUpCommand, User> {
       throw new Error('Failed to sign up')
     }
 
-    const user = User.create(
+    const user = User.signUp(
       new UserId(authResult.id),
       new Email(authResult.email),
-      authResult.createdAt,
     )
-    user.signUp()
+   
+
     await this.userRepository.create(user)
-    this.eventBus.publishAndClear(user)
+    this.eventBus.publish([...user.getDomainEvents()])
 
     return user
   }
