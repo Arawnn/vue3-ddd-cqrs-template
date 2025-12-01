@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import { useUserReadStore } from '@/features/user/store/useUserReadStore'
 import { useAuthStore } from '@/features/user/store/useAuthStore'
 
-const authStore = useAuthStore() 
+const authStore = useAuthStore()
 const userReadStore = useUserReadStore()
 const router = useRouter()
 

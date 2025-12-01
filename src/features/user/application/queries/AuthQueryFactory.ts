@@ -2,10 +2,10 @@ import type { IAuthService } from '../../domain/IAuthService'
 import type { IQueryHandler } from '@/core/application/IQueryHandler'
 import type { GetCurrentUserQuery } from './GetCurrentUserQuery'
 import { GetCurrentUserQueryHandler } from './GetCurrentUserQueryHandler'
-import type { UserReadDTO } from './dto/UserReadDTO'
+import type { User } from '@/features/user/domain/User'
 
 export interface IAuthQueryFactory {
-  createGetCurrentUserQuery(): IQueryHandler<GetCurrentUserQuery, UserReadDTO | null>
+  createGetCurrentUserQuery(): IQueryHandler<GetCurrentUserQuery, User | null>
 }
 
 export class AuthQueryFactory implements IAuthQueryFactory {
@@ -13,7 +13,7 @@ export class AuthQueryFactory implements IAuthQueryFactory {
     this.authService = authService
   }
 
-  createGetCurrentUserQuery(): IQueryHandler<GetCurrentUserQuery, UserReadDTO | null> {
+  createGetCurrentUserQuery(): IQueryHandler<GetCurrentUserQuery, User | null> {
     return new GetCurrentUserQueryHandler(this.authService)
   }
 }

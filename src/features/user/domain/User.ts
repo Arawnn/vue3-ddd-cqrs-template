@@ -8,11 +8,7 @@ export class User extends Entity<UserId> {
   public readonly email: Email
   private _lastSignedInAt: Date | null = null
 
-  private constructor(
-    id: UserId,
-    email: Email,
-    lastSignedInAt: Date | null = null,
-  ) {
+  private constructor(id: UserId, email: Email, lastSignedInAt: Date | null = null) {
     super(id)
     this.email = email
     this._lastSignedInAt = lastSignedInAt

@@ -8,4 +8,3 @@ export interface IEventBus {
   publish(events: DomainEvent[]): void
   off<T extends DomainEvent>(eventName: string, handler: EventHandler<T>): void
 }
-

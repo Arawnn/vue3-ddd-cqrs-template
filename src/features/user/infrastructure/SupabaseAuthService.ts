@@ -37,7 +37,7 @@ export class SupabaseAuthService implements IAuthService {
 
     return {
       id: data.user.id,
-      email: data.user.email ?? ''
+      email: data.user.email ?? '',
     }
   }
 

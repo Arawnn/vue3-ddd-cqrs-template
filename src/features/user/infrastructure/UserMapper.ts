@@ -9,9 +9,6 @@ export class UserMapper {
       throw new Error('User email is required')
     }
 
-    return User.create(
-      new UserId(supabaseUser.id),
-      new Email(supabaseUser.email),
-    )
+    return User.create(new UserId(supabaseUser.id), new Email(supabaseUser.email))
   }
 }

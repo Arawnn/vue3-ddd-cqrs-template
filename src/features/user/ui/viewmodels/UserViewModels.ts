@@ -1,17 +1,13 @@
-import type { UserReadDTO } from "../../application/queries/dto/UserReadDTO";
+import type { User } from '@/features/user/domain/User'
 
 export class UserViewModels {
-    constructor(private readonly dto: UserReadDTO) {}
+  constructor(private user: User) {}
 
-    get email(): string {
-        return this.dto.email;
-    }
+  get email(): string {
+    return this.user.email.value
+  }
 
-    get createdAt(): Date {
-        return this.dto.createdAt;
-    }
-
-    get lastSignedInAt(): Date | null {
-        return this.dto.lastSignedInAt;
-    }
+  get lastSignedInAt(): Date | null {
+    return this.user.lastSignedInAt
+  }
 }

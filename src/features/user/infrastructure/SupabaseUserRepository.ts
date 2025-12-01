@@ -1,3 +1,4 @@
+import type { Email } from '../domain/Email'
 import type { IUserRepository } from '../domain/IUserRepository'
 import type { User } from '../domain/User'
 import { UserId } from '../domain/UserId'
@@ -16,6 +17,11 @@ export class SupabaseUserRepository implements IUserRepository {
     return user
   }
 
+  async delete(id: UserId): Promise<void> {
+    console.log(id)
+    return
+  }
+
   async findById(id: UserId): Promise<User | null> {
     const { data, error } = await supabaseClient.auth.getUser()
 
@@ -30,7 +36,17 @@ export class SupabaseUserRepository implements IUserRepository {
     return UserMapper.toDomain(data.user)
   }
 
-  async delete(id: UserId): Promise<void> {
-    return
+  async findByEmail(email: Email): Promise<User | null> {
+    const { data, error } = await supabaseClient.auth.getUser()
+
+    if (error || !data.user || data.user.email !== email.value) {
+      return null
+    }
+
+    return UserMapper.toDomain(data.user)
+  }
+
+  async findAll(): Promise<User[] | null> {
+    return null
   }
 }
